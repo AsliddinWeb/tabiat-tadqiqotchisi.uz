@@ -1,0 +1,250 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<style>
+    .form-control:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.2rem rgba(var(--primary-rgb), 0.25);
+    }
+    
+    .chat-platforms a {
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+    
+    .chat-platforms a:hover {
+        color: var(--primary-color);
+        text-decoration: underline;
+    }
+    
+    .alert {
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- Xabarlar -->
+{% if messages %}
+<div class="container mt-4">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- Start:: Section-10 -->
+<section class="section" id="contactus">
+    <div class="container">
+        <div class="heading-section">
+            <div class="heading-subtitle">Bog'lanish</div>
+            <div class="heading-title">Biz Bilan Bog'laning</div>
+            <div class="heading-description">
+                Savollaringiz bormi yoki yordamga muhtojmisiz? Bizning jamoamiz sizga yordam berishga tayyor. <br> Har qanday vaqtda biz bilan bog'laning.
+            </div>
+        </div>
+        <div class="row gy-4 justify-content-between">
+            <div class="col-xl-6">
+                <h6 class="fw-semibold mb-4">Xabar Yuboring!</h6>
+                <form method="POST" action="{% url 'contact_page' %}">
+                    {% csrf_token %}
+                    <div class="row gy-3">
+                        <div class="col-xl-12">
+                            <label for="full_name" class="form-label">To'liq ismingiz</label>
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="full_name" 
+                                   name="full_name"
+                                   placeholder="Ismingiz va familiyangizni kiriting"
+                                   required>
+                        </div>
+                        <div class="col-xl-12">
+                            <label for="phone" class="form-label">Telefon raqamingiz</label>
+                            <input type="tel" 
+                                   class="form-control" 
+                                   id="phone" 
+                                   name="phone"
+                                   placeholder="+998 94 339 51 51"
+                                   required>
+                        </div>
+                        <div class="col-xl-12">
+                            <label for="message" class="form-label">Xabaringiz</label>
+                            <textarea class="form-control"
+                                      id="message"
+                                      name="message"
+                                      rows="4"
+                                      placeholder="Xabaringizni shu yerga yozing..."
+                                      required></textarea>
+                        </div>
+                    </div>
+                    <div class="d-grid mt-3">
+                        <button type="submit" class="btn btn-primary">
+                            Yuborish<i class="ti ti-arrow-narrow-right ms-1 align-middle"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xl-5">
+                <div class="row gy-5">
+                    <div class="col-xl-12">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <span class="avatar avatar-lg bg-primary-transparent svg-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#5f6368"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+                                </span>
+                            </div>
+                            <div>
+                                <h5 class="fs-13 text-muted text-uppercase">Manzil :</h5>
+                                <span class="d-block fs-12 text-muted mb-2">Dushanba-Juma 9:00 - 18:00 gacha tashrif buyuring</span>
+                                <div class="fw-semibold">Qarshi davlat universiteti
+                                    <br>Qarshi shahar<br>
+                                    O'zbekiston</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <span class="avatar avatar-lg bg-primary-transparent svg-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#5f6368"><path d="M0 0h24v24H0z" fill="none"></path><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"></path></svg>
+                                </span>
+                            </div>
+                            <div>
+                                <h5 class="fs-13 text-muted text-uppercase">Telefon raqami :</h5>
+                                <span class="d-block fs-12 text-muted mb-2">Muallif bilan telefon orqali bog'lanish</span>
+                                <div class="fw-semibold">+998 94 339 51 51</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <span class="avatar avatar-lg bg-primary-transparent svg-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#5f6368"><path d="M0 0h24v24H0z" fill="none"></path><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                                </span>
+                            </div>
+                            <div>
+                                <h5 class="fs-13 text-muted text-uppercase">Email :</h5>
+                                <span class="d-block fs-12 text-muted mb-2">Email orqali savollar yuboring</span>
+                                <div class="fw-semibold lh-1">boriyevatursunoy680@gmail.com</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <span class="avatar avatar-lg bg-primary-transparent svg-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 5.589 2 10c0 2.908 1.897 5.516 5 6.934V22l5.34-4.004C17.697 17.852 22 14.32 22 10c0-4.411-4.486-8-10-8zm-2.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path></svg>
+                                </span>
+                            </div>
+                            <div>
+                                <h5 class="fs-13 text-muted text-uppercase">Loyiha haqida :</h5>
+                                <div class="fw-normal lh-lg text-muted">
+                                    Mazkur ilovada siz Maktabgacha taʼlim tashkilotlarida olib boriladigan
+                                    Fan va tabiatshunoslik asoslari/ekologiya taʼlimiy faoliyatida
+                                    "Fan va tabiat" markazida olib boriladigan kichik tajribalardan namunalarni topishingiz mumkin.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End:: Section-10 -->
+
+<!-- Start:: Buy Now Section -->
+<section class="section section-md section-primary text-fixed-white py-5 buy-now-section">
+    <div class="testimonials-background-container">
+        <img src="{% static 'assets/images/media/backgrounds/1.png'%}" alt="">
+    </div>
+    <div class="container">
+        <div class="d-flex align-items-center gap-2 justify-content-between flex-wrap">
+            <div>
+                <h4 class="fw-semibold text-fixed-white">Fan va tabiat bilan yaqinroq bo'ling</h4>
+                <span class="d-block fs-16 op-8">Maktabgacha ta'lim metodikalari va tajribalar haqida ko'proq ma'lumot oling.</span>
+            </div>
+            <a href="{% url 'videos_page' %}" class="btn btn-secondary btn-lg btn-w-md d-inline-flex align-items-center">
+                Tajribalarni Ko'rish<i class="ti ti-microscope ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- End:: Buy Now Section -->
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Telefon raqam formatlash
+    const phoneInput = document.getElementById('phone');
+
+    phoneInput.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+
+        // Agar 998 bilan boshlansa, uni olib tashlash
+        if (value.startsWith('998')) {
+            value = value.substring(3);
+        }
+
+        // Formatlash: +998 94 339 51 51
+        if (value.length > 0) {
+            let formatted = '+998';
+            if (value.length > 0) {
+                formatted += ' ' + value.substring(0, 2);
+            }
+            if (value.length >= 3) {
+                formatted += ' ' + value.substring(2, 5);
+            }
+            if (value.length >= 6) {
+                formatted += ' ' + value.substring(5, 7);
+            }
+            if (value.length >= 8) {
+                formatted += ' ' + value.substring(7, 9);
+            }
+            e.target.value = formatted;
+        }
+    });
+    
+    // Forma yuborilganda validatsiya
+    const contactForm = document.querySelector('form');
+    contactForm.addEventListener('submit', function(e) {
+        const fullName = document.getElementById('full_name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
+        
+        if (!fullName || !phone || !message) {
+            e.preventDefault();
+            alert('Iltimos, barcha maydonlarni to\'ldiring!');
+            return false;
+        }
+        
+        // Telefon raqam uzunligini tekshirish
+        const phoneDigits = phone.replace(/\D/g, '');
+        if (phoneDigits.length < 12) {
+            e.preventDefault();
+            alert('Iltimos, to\'liq telefon raqamini kiriting!');
+            return false;
+        }
+    });
+    
+    // Alert avtomatik yopish (5 soniyadan keyin)
+    const alerts = document.querySelectorAll('.alert');
+    alerts.forEach(function(alert) {
+        setTimeout(function() {
+            const bsAlert = new bootstrap.Alert(alert);
+            bsAlert.close();
+        }, 5000);
+    });
+});
+</script>
+{% endblock %}

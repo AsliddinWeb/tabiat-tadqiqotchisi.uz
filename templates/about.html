@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Start:: About Section -->
+<section class="section py-5 bg-light" id="about">
+    <div class="container">
+        <div class="text-center mb-5">
+            <div class="d-inline-flex align-items-center gap-2 text-default badge bg-white border fs-13 rounded-pill">
+                <span class="avatar avatar-xs avatar-rounded bg-success">
+                    <i class="ri-leaf-fill fs-14"></i>
+                </span>
+                Muallif haqida
+            </div>
+            <h1 class="fw-semibold mt-3 landing-banner-heading">Maktabgacha ta'lim va <span class="text-primary">fan</span> yo'lidagi izlanishlar</h1>
+            <p class="text-muted fs-17 mt-2">
+                Bu sahifa maktabgacha ta'lim, fan va ekologiya sohalarida tadqiqot olib boruvchi
+                olimlar haqida.
+            </p>
+        </div>
+
+        <div class="row align-items-center justify-content-center mb-5">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="text-center">
+                    <div class="d-inline-flex align-items-center justify-content-center"
+                         style="width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <span style="font-size: 80px;">👩‍🏫</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3 class="fw-semibold mb-3">Yoziyeva Umida Lutfullayevna</h3>
+                <p class="text-primary fw-semibold mb-3">Pedagogik fanlar doktori (DSc), dotsent</p>
+                <p class="text-muted fs-16">
+                    Maktabgacha ta'lim sohasida ilmiy tadqiqotlar olib boruvchi tajribali pedagog va ilmiy rahbar.
+                    Bolalar rivojlanishi, ta'lim metodikasi va ekologik tarbiya yo'nalishlarida ko'plab
+                    ilmiy ishlar muallifi.
+                </p>
+            </div>
+        </div>
+
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="text-center">
+                    <div class="d-inline-flex align-items-center justify-content-center"
+                         style="width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <span style="font-size: 80px;">👩‍🏫</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3 class="fw-semibold mb-3">Boʻriyeva Tursunoy Alisher qizi</h3>
+                <p class="text-primary fw-semibold mb-3">Tayanch doktorant</p>
+                <p class="text-muted fs-16">
+                    Qarshi davlat universiteti, 13.00.08 - Maktabgacha taʼlim va tarbiya nazariyasi
+                    va metodikasi ixtisosligi tayanch doktaranti. Zamonaviy ta'lim texnologiyalari va
+                    fan ta'limini rivojlantirishga bag'ishlangan tadqiqotlar olib bormoqda.
+                </p>
+
+                <div class="mt-4">
+                    <a href="tel:+998943395151" class="btn btn-success rounded-pill me-2">
+                        <i class="ri-phone-line me-1"></i> Telefon
+                    </a>
+                    <a href="mailto:boriyevatursunoy680@gmail.com" class="btn btn-outline-primary rounded-pill">
+                        <i class="ri-mail-line me-1"></i> Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End:: About Section -->
+
+<!-- Start:: Project Section -->
+<section class="section py-5">
+    <div class="container">
+        <div class="text-center mb-4">
+            <h2 class="fw-semibold mb-3">
+                <i class="ri-information-line me-2"></i>
+                Loyiha haqida
+            </h2>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start">
+                            <i class="ri-information-fill text-primary fs-24 me-3 mt-1"></i>
+                            <div>
+                                <h5 class="card-title fw-semibold mb-3">Dastur haqida</h5>
+                                <p class="text-muted fs-16 mb-0">
+                                    Bu dastur orqali Tabiatshunoslik asoslari/ekologiya taʼlim faoliyatida
+                                    "Fan va tabiat" markazida olib boriladigan kichik tajribalardan namunalarni
+                                    topishingiz mumkin.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start">
+                            <i class="ri-heart-fill text-danger fs-24 me-3 mt-1"></i>
+                            <div>
+                                <h5 class="card-title fw-semibold mb-3">Rahmat</h5>
+                                <p class="text-muted fs-16 mb-0">
+                                    Dasturdan foydalanganingiz uchun rahmat!
+                                    Fikr-mulohazalaringizni yuborishni unutmang.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End:: Project Section -->
+
+{% endblock %}

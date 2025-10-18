@@ -1,0 +1,159 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+
+
+{% endblock %}
+
+{% block content %}
+	
+<!-- Start:: Landing Banner -->
+<div class="landing-banner" id="home">
+    <div class="banner-image-container">
+        <img src="{% static 'assets/images/media/backgrounds/5.png' %}" alt="Tabiat Tadqiqotchisi">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 my-auto">
+                <div class="d-inline-flex align-items-center gap-2 text-default badge bg-white border fs-13 rounded-pill">
+                    <span class="avatar avatar-xs avatar-rounded bg-success">
+                        <i class="ri-leaf-fill fs-14"></i>
+                    </span>
+                    Ilm va tabiat uyg‘unligi
+                </div>
+                <h1 class="fw-semibold mt-3 landing-banner-heading">
+                    Tabiat sirlarini <br> birgalikda <span class="text-primary">kashf etamiz</span>
+                </h1>
+                <span class="d-block fs-18">
+                    Men — tabiat tadqiqotchisiman. Atrof-muhit, o‘simlik va hayvonot olamidagi noyob jarayonlarni ilmiy asosda o‘rganaman.
+                    Qisqa videolar orqali sizga tabiat mo‘jizalarini yaqinroq tanishtiraman.
+                </span>
+                <div class="btn-list banner-buttons mt-3">
+                    <a href="{% url 'videos_page' %}" class="btn btn-primary btn-lg rounded-pill btn-w-lg">
+                        <i class="ri-play-circle-line me-2"></i> Videolarni tomosha qilish
+                    </a>
+                    <a href="{% url 'about_page' %}" class="btn btn-lg btn-light border rounded-pill btn-w-lg">
+                        <i class="ri-information-line me-2"></i> Men haqimda
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="banner-main-img text-end d-xl-block d-none">
+                    <img src="{% static 'assets/images/home_image2.webp' %}" alt="Tabiat Tadqiqotchisi" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: Landing Banner -->
+
+<!-- Start:: Section - Tabiat Tadqiqot Jarayoni -->
+<section class="section">
+    <div class="container">
+        <div class="heading-section">
+            <div class="heading-subtitle">Tadqiqot jarayoni</div>
+            <div class="heading-title">Tabiatni o‘rganish bosqichlari</div>
+            <div class="heading-description">
+                Ilmiy izlanishlar tabiatni chuqur anglashga yo‘l ochadi. <br> Quyida tadqiqot jarayonining asosiy bosqichlari keltirilgan.
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col-lg-3">
+                <div class="card custom-card border-0 shadow-none">
+                    <div class="card-body p-4 text-center">
+                        <div class="step-arrow-container d-lg-block d-none">
+                            <img src="{% static 'assets/images/media/backgrounds/3.png'%}" alt="" class="img-fluid">
+                        </div>
+                        <div class="lh-1 mb-3">
+                            <span class="avatar avatar-lg svg-primary text-primary workflow-icon-container">
+                                <i class="ri-eye-line fs-24"></i>
+                            </span>
+                        </div>
+                        <h5 class="fw-semibold">Kuzatish</h5>
+                        <span class="d-block text-muted">
+                            Tabiatdagi hodisalar, o‘simlik va hayvonot olamidagi o‘zgarishlar diqqat bilan kuzatiladi va qayd etiladi.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card custom-card border-0 shadow-none">
+                    <div class="card-body p-4 text-center">
+                        <div class="step-arrow-container d-lg-block d-none">
+                            <img src="{% static 'assets/images/media/backgrounds/4.png'%}" alt="" class="img-fluid">
+                        </div>
+                        <div class="lh-1 mb-3">
+                            <span class="avatar avatar-lg svg-warning text-warning workflow-icon-container">
+                                <i class="ri-flask-line fs-24"></i>
+                            </span>
+                        </div>
+                        <h5 class="fw-semibold">Tahlil va tajriba</h5>
+                        <span class="d-block text-muted">
+                            Olingan ma’lumotlar laboratoriyada tahlil qilinadi, tajribalar o‘tkaziladi va ilmiy xulosalar shakllantiriladi.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card custom-card border-0 shadow-none">
+                    <div class="card-body p-4 text-center">
+                        <div class="lh-1 mb-3">
+                            <span class="avatar avatar-lg svg-success text-success workflow-icon-container">
+                                <i class="ri-leaf-fill fs-24"></i>
+                            </span>
+                        </div>
+                        <h5 class="fw-semibold">Natija va xulosa</h5>
+                        <span class="d-block text-muted">
+                            Tadqiqot natijalari tahlil qilinib, ilmiy maqolalar, taqdimotlar va videolar orqali ommaga yetkaziladi.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End:: Section - Tabiat Tadqiqot Jarayoni -->
+
+<!-- Start:: Section - Ilmiy Faoliyat Statistikasi -->
+<section class="section bg-light py-5">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-3 col-6">
+                <div class="text-center stats-point one">
+                    <h4 class="fw-semibold mb-1">25+</h4>
+                    <div class="text-muted fs-16">Ilmiy maqolalar</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="text-center stats-point two">
+                    <h4 class="fw-semibold mb-1">15</h4>
+                    <div class="text-muted fs-16">Tadqiqot loyihalari</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="text-center stats-point three">
+                    <h4 class="fw-semibold mb-1">30+</h4>
+                    <div class="text-muted fs-16">Ekspeditsiyalar</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="text-center stats-point four">
+                    <h4 class="fw-semibold mb-1">99%</h4>
+                    <div class="text-muted fs-16">Talabalar qoniqish darajasi</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End:: Section - Ilmiy Faoliyat Statistikasi -->
+
+
+{% endblock %}
+
+{% block scripts %}
+	
+
+
+{% endblock %}
